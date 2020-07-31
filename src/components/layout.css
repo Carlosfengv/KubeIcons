@@ -25,7 +25,7 @@ time, mark, audio, video, input, button, textarea,select{
     font-size: 12px;
     font-family: "微软雅黑";
     font-weight: normal;
-    color: #666;
+    color: #242e42;
     border: none;
     vertical-align: baseline;
 }
@@ -47,7 +47,7 @@ table{ border-collapse: collapse; border-spacing:0; }
 button,input,optgroup,select,textarea { -webkit-appearance:none; }
  
 /* 去掉a、input和button点击时的蓝色外边框和灰色半透明背景 */
-a,button,input,optgroup,select,textarea { -webkit-tap-highlight-color:rgba(0,0,0,0); }
+a,button,input,optgroup,select,textarea { -webkit-tap-highlight-color:#242e42; }
  
 /* 禁止长按链接与图片弹出菜单 */
 a,img { -webkit-touch-callout: none; }

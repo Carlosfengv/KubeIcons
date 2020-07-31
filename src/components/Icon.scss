@@ -3,6 +3,11 @@ $icon-button-active-background-color: #55bc8a;
 $icon-button-hover-background-color: #55bc8a;
 $icon-button-disabled-opacity: 0.7;
 
+.kubed-coloured {
+  color: #324558;
+  fill: #b6c2cd;
+}
+
 .icon {
     &.icon-clickable {
       border-radius: $icon-button-border-radius;
