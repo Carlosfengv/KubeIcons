@@ -87,12 +87,14 @@ a:link{ text-decoration: none;  color: #666; }
   background-color: #f9fbfd;
   padding: 16px;
 }
-
+.IconContent .is-5,.IconContent .content{
+  margin-bottom: 12px!important;
+}
 .ICons{
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fill,88px);
-  grid-template-rows: repeat(auto-fill,120px);
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill,60px);
+  grid-template-rows: repeat(auto-fill,96px);
 }
 
 .ICons li{
@@ -100,14 +102,14 @@ a:link{ text-decoration: none;  color: #666; }
   vertical-align: middle;
 }
 .ICons li span{
-  height: 88px;
-  width: 88px;
+  height: 60px;
+  width: 60px;
   padding: 16px;
   border-radius: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   background-color: #fff;
 }
-.ICons li span p{
+.ICons li p{
   width: inherit;
   overflow: hidden;
   text-overflow: ellipsis;

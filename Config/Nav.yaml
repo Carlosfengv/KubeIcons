@@ -1,0 +1,441 @@
+#定义了Icons的导航目录 
+- title: 操作类
+  label: Operation
+  description: 适用于操作提示等场景中的图标
+  items:
+  - title: 刷新
+    label: Refresh
+    description: 
+  - title: 添加
+    label: Add
+    description: 
+  - title: 减少
+    label: Substract
+    description: 
+  - title: 检查
+    label: Check
+    description: 
+  - title: 关闭
+    label: Close
+    description: 
+  - title: 最大化
+    label: Maximize
+    description: 
+  - title: 最小化
+    label: Minimize
+    description: 
+  - title: 开始
+    label: Start
+    description: 
+  - title: 停止
+    label: Stop
+    description: 
+  - title: 暂停
+    label: Pause
+    description: 
+  - title: 扩大
+    label: Expand
+    description: 
+  - title: 折叠
+    label: Collapse
+    description: 
+  - title: 链接
+    label: Link
+    description: 
+  - title: 放大
+    label: Magnifier
+    description: 
+  - title: 设置
+    label: Setting
+    description: 
+  - title: 删除
+    label: Trash
+    description: 
+  - title: 编辑
+    label: Edit
+    description: 
+  - title: 过滤
+    label: Filter
+    description: 
+  - title: 星标
+    label: Star
+    description: 
+  - title: 升级
+    label: Update
+    description: 
+- title: 方向类
+  label: Direction
+  description: 图标使用于指示方向性的内容
+  items:
+  - title: 线性箭头下
+    label: Chevron Down
+    description: 
+  - title: 线性箭头上
+    label: Chevron Up
+    description: 
+  - title: 线性箭头左
+    label: Chevron Left
+    description: 
+  - title: 线性箭头右
+    label: Chevron Right
+    description: 
+  - title: 符号下
+    label: Caret Down
+    description: 
+  - title: 符号上
+    label: Caret Up
+    description: 
+  - title: 符号左
+    label: Caret Left
+    description: 
+  - title: 符号右
+    label: Caret Right
+    description: 
+  - title: 下一个
+    label: Next
+    description: 
+  - title: 上一个
+    label: Previous
+    description: 
+  - title: 升序
+    label: Sort Ascending
+    description: 
+  - title: 降序
+    label: Sort Descending
+    description: 
+- title: 信息
+  label: Info
+  description: 用于信息提示
+  items:
+  - title: 信息
+    label: Information
+    description: 
+  - title: 疑问
+    label: Question
+    description: 
+  - title: 感叹
+    label: Exclamation
+    description: 
+  - title: 成功
+    label: Success
+    description: 
+  - title: 失败
+    label: Failure
+    description: 
+  - title: 元信息
+    label: MetaData
+    description: 
+  - title: 提示
+    label: Tooltip
+    description: 
+
+- title: 通用
+  label: General
+  description: 用于常见的资源对象使用
+  items:
+  - title: CPU
+    label: Cpu
+    description: 
+  - title: 内存
+    label: Mem
+    description: 
+  - title: 云
+    label: Cloud
+    description: 
+  - title: USB设备
+    label: Usb
+    description: 
+  - title: Debug
+    label: Debug
+    description: 
+  - title: 固态硬盘
+    label: SSD
+    description: 
+  - title: 终端
+    label: Terminal
+    description: 
+  - title: 位置
+    label: Location
+    description: 
+  - title: 安全
+    label: Shield
+    description: 
+  - title: 日志
+    label: Log
+    description: 
+
+- title: 逻辑对象
+  label: Logical
+  description: 
+  items:
+  - title: 家
+    label: Home
+    description: 
+  - title: 仪表盘
+    label: Dashboard
+    description: 
+  - title: 工作空间
+    label: WorkSpace
+    description: 
+  - title: 项目
+    label: Project
+    description: 
+  - title: DevOps
+    label: DevOps
+    description: 
+  - title: 用户
+    label: User
+    description: 
+  - title: 用户组
+    label: User Group
+    description: 
+  - title: 角色
+    label: Role
+    description: 
+  - title: 软件开发商
+    label: Isv
+    description: 
+
+- title: Kubetnetes 
+  label: Kubetnetes
+  description: 
+  items:
+  - title: 容器组
+    label: Pod
+    description: 
+  - title: 控制器
+    label: Controller
+    description: 
+  - title: 无状态副本集
+    label: Depolyment
+    description: 
+  - title: 有状态副本集
+    label: StatefulSet
+    description: 
+  - title: 守护进程集
+    label: DeamonSet
+    description: 
+  - title: 服务
+    label: Service
+    description: 
+  - title: 自定义资源
+    label: CRD
+    description: 
+  - title: 任务
+    label: Job
+    description: 
+  - title: 扩展
+    label: Scaling
+    description: 
+  - title: 应用路由
+    label: Ingress
+    description: 
+  - title: 网络
+    label: Network
+    description: 
+  - title: IP地址
+    label: IP
+    description: 
+  - title: 网络策略
+    label: Network Policy
+    description: 
+  - title: IP地址池
+    label: IP Pool
+    description: 
+  - title: DNS
+    label: DNS
+    description: 
+  - title: 快照
+    label: Snapshot
+    description: 
+  - title: 存储类型
+    label: Stroage Class
+    description: 
+  - title: 持久化存储卷
+    label: PVC
+    description:
+  - title: 密钥
+    label: Scret
+    description: 
+  - title: 配置集
+    label: ConfigMap
+    description: 
+  - title: 事件
+    label: Event
+    description:  
+
+- title: 文件类型
+  label: FileType
+  description: 适用于表示文件类型的图标
+  items:
+  - title: PDF
+    label: PDF
+    description: 
+  - title: Jar
+    label: Jar
+    description: 
+  - title: War
+    label: War
+    description: 
+  - title: 制品
+    label: Binary
+    description: 
+  - title: Csv
+    label: Csv
+    description: 
+  - title: Json
+    label: Json
+    description: 
+
+- title: 开发语言
+  label: Language
+  description: 适用于软件开发语言的图标
+  items:
+  - title: Java
+    label: Java
+    description: 
+  - title: Gradle
+    label: Gradle
+    description: 
+  - title: Javascript
+    label: Javascript
+    description: 
+  - title: Php
+    label: Php
+    description: 
+  - title: Python
+    label: Python
+    description: 
+  - title: Golang
+    label: Golang
+    description: 
+  - title: NodeJs
+    label: NodeJs
+    description: 
+
+- title: 商标
+  label: Brand
+  description: 产品中可能引用到的厂商图标
+  items:
+  - title: 青云
+    label: QingCloud
+    description: 
+  - title: 亚马逊
+    label: Aws
+    description: 
+  - title: Vmware
+    label: Vmware
+    description: 
+  - title: Kubernetes
+    label: Kubernetes
+    description: 
+  - title: Github
+    label: Github
+    description:
+  - title: Google Plus
+    label: Google Plus
+    description:
+  - title: Git
+    label: Git
+    description:
+  - title: Svn
+    label: Svn
+    description:
+  - title: Gitlab
+    label: Gitlab
+    description:
+  - title: Istio
+    label: Istio
+    description:
+  - title: Openpitrix
+    label: Openpitrix
+    description:
+  - title: Kubesphere
+    label: Kubesphere
+    description:
+  - title: Etcd
+    label: Etcd
+    description:
+  - title: 阿里云
+    label: Aliyun
+    description: 
+  - title: Power
+    label: Power
+    description: 
+  - title: Bitbucket
+    label: Bitbucket
+    description: 
+  - title: Jenkins
+    label: Jenkins
+    description: 
+  - title: Helm
+    label: Helm
+    description: 
+  - title: Sonarqube
+    label: Sonarqube
+    description: 
+  - title: Glusterfs
+    label: Glusterfs
+    description: 
+  - title: Ceph
+    label: Ceph
+    description: 
+  - title: OpenStack
+    label: OpenStack
+    description: 
+  - title: IE
+    label: IE
+    description: 
+
+- title: 操作系统
+  label: Operating System
+  description: 计算机操作系统相关图标
+  items:
+  - title: Arch Linux
+    label: Arch Linux
+    description: 
+  - title: Centos
+    label: Centos
+    description: 
+  - title: Coreos
+    label: Coreos
+    description: 
+  - title: Debian
+    label: Debian
+    description: 
+  - title: Arch Linux
+    label: Arch Linux
+    description: 
+  - title: Fedora
+    label: Fedora
+    description: 
+  - title: FreeBSD
+    label: FreeBSD
+    description: 
+  - title: Debian
+    label: Debian
+    description: 
+  - title: IOS
+    label: IOS
+    description: 
+  - title: MacOs
+    label: MacOs
+    description: 
+  - title: Linux
+    label: Linux
+    description: 
+  - title: Opensuse
+    label: Opensuse
+    description: 
+  - title: Oracle Linux
+    label: Oracle Linux
+    description: 
+  - title: Redhat
+    label: Redhat
+    description: 
+  - title: Ubuntu
+    label: Ubuntu
+    description: 
+  - title: Windows
+    label: Windows
+    description: 

@@ -35,6 +35,13 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/Config`,
+      },
+    },
   ],
 }

@@ -6,37 +6,35 @@ import "bulma/bulma.sass"
 
 export default function IndexPage(){
     const data = useStaticQuery(graphql`{
-      allFile (filter: {relativeDirectory: {ne: "Sprites"}}) {
-        group(field: relativeDirectory) {
-          field
-          fieldValue
-          totalCount
-          edges {
-            node {
-              id
-              name
-              relativePath
-              relativeDirectory
-              absolutePath
-            }
+      allNavYaml {
+        nodes {
+          label
+          title
+          description
+          items {
+            label
+            title
           }
         }
       }
     }
      `)
     return <Layout>
-              <h1>Simply Delightful Icon System</h1>
-              <p>KubeDesign Icon is a set of open-source neutral-style system symbols elaborately crafted for designers and developers.
+              <h1 className="title">Simply Delightful Icon System</h1>
+              <p className="subtitle">KubeDesign Icon is a set of open-source neutral-style system symbols elaborately crafted for designers and developers.
 All of the icons are free for both personal and commercial use.</p>
               {console.log(data)}
-              {data.allFile.group.map((item,index)=>{
-                return <div key={index} className="IconContent" id={item.fieldValue}>
-                        <h2 className="title"> {item.fieldValue} </h2>
+              {data.allNavYaml.nodes.map((item,index)=>{
+                return <div key={index} className="IconContent" id={item.label}>
+                        <h4 className="title is-5"> {item.title} ({item.label})</h4>
+                        <div  className="content">
+                        <p>{item.description}</p>
+                        </div>
                         <ul className="ICons">
-                          {item.edges.map((item,index)=>{
+                          {item.items.map((item,index)=>{
                             return <li key={index}>
-                              <Icon name={item.node.name.slice(4)} type="coloured" size="48"  changeable />
-                              <p>{item.node.name.slice(4).replace("-"," ")}</p>
+                              <Icon name={item.label.replace(' ','-').toLowerCase()} type="coloured" size="48" />
+                              <p>{item.label}</p>
                               </li>
                           })}
                         </ul>

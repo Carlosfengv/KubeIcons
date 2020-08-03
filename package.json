@@ -18,6 +18,7 @@
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-transformer-inline-svg": "^0.0.7",
     "gatsby-transformer-sharp": "^2.5.7",
+    "gatsby-transformer-yaml": "^2.4.10",
     "lodash": "^4.17.19",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
