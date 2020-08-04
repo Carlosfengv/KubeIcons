@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Icon from "../components/Icon"
+import Icon from "../components/Icon/index"
 import "bulma/bulma.sass"
+import DetailsModal from "../components/DetailsModal/index"
+import Controller from "../components/Controller/index"
 
 export const query = graphql`
   {
@@ -25,43 +27,72 @@ class IndexPage extends Component{
     super(props);
       this.state = {
         isShow: false,
-        nav:  {}
+        nav:  this.props.data.allNavYaml,
+        icon: {},
+        activeNav: "全部",
+        typeshow: false
       }
   }
   
-  componentWillMount(){
+  showIconsDetails = (e) =>{
+    if (e===undefined) {
+      return {}
+    }
     this.setState({
-      nav: this.props.data.allNavYaml
+      isShow: !this.state.isShow,
+      icon: e
     })
-    console.log('willmount')
-    console.log(this.props.data.allNavYaml)
+  }
+  showSelect = (e)=>{
+    if (this.state.typeshow === true) {
+      console.log("show")
+      this.setState({
+        typeshow: !this.state.typeshow,
+        activeNav: e.title
+      })
+    }
+    this.setState({
+        typeshow: !this.state.typeshow,
+    })
   }
   
   render(){
-      return <Layout>
-      <h1 className="title">Simply Delightful Icon System</h1>
-      <p className="subtitle">KubeDesign Icon is a set of open-source neutral-style system symbols elaborately crafted for designers and developers.
-All of the icons are free for both personal and commercial use.</p>
-      {console.log('111111')}
-      {console.log(this.state.nav)}
-      {this.state.nav.nodes.map((item,index)=>{
-        return <div key={index} className="IconContent" id={item.label}>
-                <h4 className="title is-5"> {item.title} ({item.label})</h4>
-                <div  className="content">
-                <p>{item.description}</p>
-                </div>
-                <ul className="ICons">
-                  {item.items.map((item,index)=>{
-                    return <li key={index}>
-                      <Icon name={item.label.replace(' ','-').toLowerCase()} type="coloured" size="48" />
-                      <p>{item.label}</p>
-                      </li>
-                  })}
-                </ul>
-                
-              </div>
-      })}
-  </Layout>
+      return <>
+      {this.state.isShow? 
+            <DetailsModal
+            icon={this.state.icon}
+            onClick={this.showIconsDetails}
+            ></DetailsModal>: <></>}
+      <Layout>
+          <div id="all">
+          <h1 className="title">更懂企业产品的开源 Icon System</h1>
+          <p >Kube Icon 是一套由设计师及前端开发工程共同构建并开源的 Icon System, 脱胎于QingCloud 设计团队, 适用于企业级中后台产品及云计算产品中. 一切图标都是免费的,可用于个人和商业用途</p>
+          </div> 
+          <Controller 
+            activeNav={this.state.activeNav}
+            nav={this.state.nav}
+            typeshow={this.state.typeshow}
+            onClick={(item)=>this.showSelect(item)}
+          ></Controller>
+          {this.state.nav.nodes.map((item,index)=>{
+            return <div key={index} className="IconContent" id={item.label.replace(' ','-').toLowerCase()}>
+                    <h6 className="title is-6"> {item.title} ({item.label})</h6>
+                    <div className="content">
+                    <p>{item.description}</p>
+                    </div>
+                    <ul className="ICons">
+                      {item.items.map((item,index)=>{
+                        return <li key={index} onClick={()=> this.showIconsDetails(item)}>
+                          <Icon name={item.label.replace(' ','-').toLowerCase()} type="coloured" size="48" />
+                          <p>{item.label}</p>
+                          </li>
+                      })}
+                    </ul>
+                    
+                  </div>
+          })}
+      </Layout>
+  </>
     }
   }
   

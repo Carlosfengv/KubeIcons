@@ -2,11 +2,9 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { isNumber, noop } from 'lodash';
-
-import svgSprite from '../Icons/Sprites';
-
-import "../components/Icon.scss"
-import domReady from "../components/domReady"
+import svgSprite from '../../Icons/Sprites';
+import "../Icon/style.scss"
+import domReady from "../Icon/domReady"
 
 const idPrefix = 'kubed-icon-';
 
@@ -32,10 +30,7 @@ const prepend = (el, target) => {
     }
   };
 
-  if (!window.iconfont__svg__inject) {
-    window.iconfont__svg__inject = true;
-    domReady(appendSvg);
-  }
+  
 
   class Icon extends PureComponent {
     static propTypes = {
@@ -62,7 +57,12 @@ const prepend = (el, target) => {
         disabled: false,
         onClick: noop,
       };
-
+      componentDidMount(){
+        if (!window.iconfont__svg__inject) {
+          window.iconfont__svg__inject = true;
+          domReady(appendSvg);
+        }
+      }
       render(){
         const {
             prefix,

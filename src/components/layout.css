@@ -76,12 +76,14 @@ sub,sup{ vertical-align: baseline; }
 html,body{ -moz-user-select: -moz-none; -moz-user-select: none; -o-user-select:none; -khtml-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none; }
 */
 
- 
-/* 清除bootstrap中a的下划线 */
-a:link{ text-decoration: none;  color: #666; }
-
 
 /* 定义样式 */
+.title.is-6 {
+  margin-bottom: 12px!important;
+}
+.container{
+  padding-top: 120px!important;
+}
 .IconContent{
   margin: 32px 0;
   background-color: #f9fbfd;
@@ -92,7 +94,7 @@ a:link{ text-decoration: none;  color: #666; }
 }
 .ICons{
   display: grid;
-  gap: 10px;
+  gap: 8px;
   grid-template-columns: repeat(auto-fill,60px);
   grid-template-rows: repeat(auto-fill,96px);
 }
@@ -100,6 +102,7 @@ a:link{ text-decoration: none;  color: #666; }
 .ICons li{
   text-align: center;
   vertical-align: middle;
+  cursor: pointer;
 }
 .ICons li span{
   height: 60px;
@@ -119,4 +122,3 @@ a:link{ text-decoration: none;  color: #666; }
   border: 1px solid #242e42;
   box-shadow: 0 2px 4px 0 rgba(36, 46, 66, 0.2)
 }
-

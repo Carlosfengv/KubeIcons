@@ -198,7 +198,7 @@
 
 - title: Kubetnetes 
   label: Kubetnetes
-  description: 
+  description: Kubetnetes 资源图标
   items:
   - title: 容器组
     label: Pod
