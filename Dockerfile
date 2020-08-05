@@ -1,4 +1,3 @@
-FROM gatsbyjs/gatsby:onbuild as build
-
-FROM gatsbyjs/gatsby
-COPY --from=build /app/public /pub
+FROM gatsbyjs/gatsby:latest
+ADD public/ /pub/docs
+RUN cp /pub/docs/404.html /pub/404.html
