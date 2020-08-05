@@ -9,14 +9,14 @@ const Header = ({}) => (
   <div className="nav">
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+        <a className="navbar-item">
           <img src={Logo} height="48" width="200"/>
         </a>
-        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        {/* <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </a> */}
       </div>
 
       <div className="navbar-menu">
@@ -35,7 +35,7 @@ const Header = ({}) => (
               <img alt="GitHub stars" src="https://img.shields.io/github/stars/Carlosfengv/kube-icons?style=social"></img>
             </div>
             <div className="navbar-item getstart">
-              <Link to='https://github.com/Carlosfengv/kube-Icons'><Icon name="github" size="20" type="light"></Icon>Get Start </Link>             
+              <Link to='https://github.com/Carlosfengv/kube-Icons'><Icon name="github" size="20" type="light"></Icon>Get Started</Link>             
             <div/>
         </div>
         </div>

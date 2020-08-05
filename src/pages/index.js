@@ -45,7 +45,6 @@ class IndexPage extends Component{
   }
   showSelect = (e)=>{
     if (this.state.typeshow === true) {
-      console.log("show")
       this.setState({
         typeshow: !this.state.typeshow,
         activeNav: e.title
