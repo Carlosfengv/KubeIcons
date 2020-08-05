@@ -1,7 +1,4 @@
-FROM node:12-alpine
-RUN mkdir /KubeIcons
-WORKDIR /KubeIcons
-COPY . /KubeIcons
-RUN yarn
-EXPOSE 8000
-CMD ["gatsby",  "develop"]
+FROM gatsbyjs/gatsby:onbuild as build
+
+FROM gatsbyjs/gatsby
+COPY --from=build /app/public /pub
