@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         <div className="container">
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Power By QingCloud Design Team
+            © {new Date().getFullYear()}, Power By QingCloud Design Team.
             {` `}
           </footer>
         </div>

@@ -19,7 +19,7 @@ const DetailsModal = props => (
                 </div>
                 <hr></hr>
                 <div className="codebox">
-                    <h7 className="title is-7">SVG Code</h7>
+                    <h6 className="title is-7">SVG Code</h6>
                     <pre>{`<svg id="__SVG_SPRITE_NODE__" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >`+
                         document.getElementById(("kubed-icon-"+ props.icon.label.replace(' ','-').toLowerCase())).innerHTML + `</svg>`}</pre>
                 </div>

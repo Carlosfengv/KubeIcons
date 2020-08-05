@@ -57,7 +57,7 @@ const prepend = (el, target) => {
         disabled: false,
         onClick: noop,
       };
-      componentDidMount(){
+      componentWillMount(){
         if (!window.iconfont__svg__inject) {
           window.iconfont__svg__inject = true;
           domReady(appendSvg);
