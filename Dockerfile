@@ -1,7 +1,3 @@
-FROM node:12-alpine
-RUN mkdir /KubeIcons
-WORKDIR /KubeIcons
-COPY . /KubeIcons
-RUN yarn
-EXPOSE 8000
-CMD ["gatsby",  "develop"]
+FROM gatsbyjs/gatsby:latest
+ADD public/ /pub/docs
+RUN cp /pub/docs/404.html /pub/404.html
