@@ -19,7 +19,11 @@ const Controller = props => (
             <div className="searchbox">
                 <div className="search-input">
                   <Icon name="magnifier" size="20" type="coloured"></Icon>
-                  <div className="input-symbol">搜索 Icon (功能近期上线)</div>
+                  <div className="input-symbol">
+                    <input placeholder="搜索Icons" 
+                      onChange={props.onChange}
+                    ></input>
+                  </div>
                 </div>
             </div>
           </div>
