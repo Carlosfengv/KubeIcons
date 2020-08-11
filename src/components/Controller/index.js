@@ -10,7 +10,7 @@ const Controller = props => (
                 {props.typeshow? <ul className="select-item">
                   {props.nav.map((item,index)=>{
                     return <li key={index} onClick={() => props.onClick(item)}>
-                              <Link to={"#"+item.label.replace(' ','-').toLowerCase()} location>{item.title}</Link>
+                              <Link to={"#"+item.label.replace(' ','-').toLowerCase()}>{item.title}</Link>
                             </li>
                   })}
                 </ul>: <></> }

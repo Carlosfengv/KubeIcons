@@ -28,6 +28,7 @@ time, mark, audio, video, input, button, textarea,select{
     color: #242e42;
     border: none;
     vertical-align: baseline;
+    scroll-behavior: smooth;
 }
  
 body{ line-height: 1; }
@@ -88,6 +89,7 @@ html,body{ -moz-user-select: -moz-none; -moz-user-select: none; -o-user-select:n
   margin: 32px 0;
   background-color: #f9fbfd;
   padding: 16px;
+  scroll-margin-top:140px;
 }
 .IconContent .is-5,.IconContent .content{
   margin-bottom: 12px!important;

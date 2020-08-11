@@ -6,6 +6,7 @@ import "bulma/bulma.sass"
 import DetailsModal from "../components/DetailsModal/index"
 import Controller from "../components/Controller/index"
 
+
 export const query = graphql`
   {
     allNavYaml {
@@ -29,25 +30,35 @@ class IndexPage extends Component{
         isShow: false,
         nav:  [],
         icon: {},
-        activeNav: "全部",
+        activeNav: "",
         typeshow: false,
-        fixed: false
+        fixed: false,
+        test: {}
       }
   }
   componentWillMount(){
-    const allnav = this.props.data.allNavYaml.nodes
-    this.setState({
-      nav: allnav
-    })
+    const allnav = this.props.data.allNavYaml.nodes 
+    const hash = window.location.hash.replace('#',"")
+    const activeNav = allnav.filter( item => item.label.toLowerCase()===hash)
+    if (activeNav.length===0) {
+      this.setState({
+        nav:allnav,
+        activeNav: '全部'
+      })
+    }else{
+      this.setState({
+        nav: allnav,
+        activeNav: activeNav[0].title
+      })
+    }
+    
   }
   componentDidMount(){
     window.addEventListener('scroll', this.bindHandleScroll)
   }
   bindHandleScroll=(event)=>{
     // 滚动的高度
-    const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false) 
-                  || window.pageYOffset
-                  || (event.srcElement ? event.srcElement.body.scrollTop : 0);
+    const scrollTop =  window.pageYOffset
     if(scrollTop > 170){
       this.setState({
         fixed: true
@@ -83,7 +94,7 @@ class IndexPage extends Component{
     this.props.data.allNavYaml.nodes.forEach(function(items,index){
      const re = items.items.filter( item => item.label.toLowerCase().match(e.target.value))
      const item = {'label': items.label ,'title':items.title ,'description':items.description ,'items':re}
-     if (re.length!=0) {
+     if (re.length!==0) {
         content.push(item)
      }
      
@@ -99,7 +110,7 @@ class IndexPage extends Component{
             icon={this.state.icon}
             onClick={this.showIconsDetails}
             ></DetailsModal>: <></>}
-      <Layout>
+          <Layout>
             <div id="all">
                 <h1 className="title">更懂企业产品的开源 Icon System</h1>
                 <p >Kube Icon 是一套由设计师及前端开发工程共同构建并开源的 Icon System, 脱胎于QingCloud 设计团队, 适用于企业级中后台产品及云计算产品中. 一切图标都是免费的,可用于个人和商业用途</p>
