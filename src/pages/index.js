@@ -30,14 +30,33 @@ class IndexPage extends Component{
         nav:  [],
         icon: {},
         activeNav: "全部",
-        typeshow: false
+        typeshow: false,
+        fixed: false
       }
   }
   componentWillMount(){
-    const allnav = this.props.data.allNavYaml
+    const allnav = this.props.data.allNavYaml.nodes
     this.setState({
       nav: allnav
     })
+  }
+  componentDidMount(){
+    window.addEventListener('scroll', this.bindHandleScroll)
+  }
+  bindHandleScroll=(event)=>{
+    // 滚动的高度
+    const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false) 
+                  || window.pageYOffset
+                  || (event.srcElement ? event.srcElement.body.scrollTop : 0);
+    if(scrollTop > 170){
+      this.setState({
+        fixed: true
+      })
+    }else{
+      this.setState({
+        fixed: false
+      })
+    }
   }
   showIconsDetails = (e) =>{
     if (e===undefined) {
@@ -62,10 +81,12 @@ class IndexPage extends Component{
   filterIcons = (e) =>{
     let content = []
     this.props.data.allNavYaml.nodes.forEach(function(items,index){
-     console.log(items.label)
      const re = items.items.filter( item => item.label.toLowerCase().match(e.target.value))
      const item = {'label': items.label ,'title':items.title ,'description':items.description ,'items':re}
-     content.push(item)
+     if (re.length!=0) {
+        content.push(item)
+     }
+     
     })
     this.setState({
       nav: content
@@ -79,19 +100,21 @@ class IndexPage extends Component{
             onClick={this.showIconsDetails}
             ></DetailsModal>: <></>}
       <Layout>
-          <div id="all">
-          <h1 className="title">更懂企业产品的开源 Icon System</h1>
-          <p >Kube Icon 是一套由设计师及前端开发工程共同构建并开源的 Icon System, 脱胎于QingCloud 设计团队, 适用于企业级中后台产品及云计算产品中. 一切图标都是免费的,可用于个人和商业用途</p>
-          </div> 
-          {console.log(this.state.nav)}
-          <Controller 
-            activeNav={this.state.activeNav}
-            nav={this.state.nav}
-            typeshow={this.state.typeshow}
-            onClick={(item)=>this.showSelect(item)}
-            onChange={this.filterIcons}
-          ></Controller>
-          {this.state.nav.nodes.map((item,index)=>{
+            <div id="all">
+                <h1 className="title">更懂企业产品的开源 Icon System</h1>
+                <p >Kube Icon 是一套由设计师及前端开发工程共同构建并开源的 Icon System, 脱胎于QingCloud 设计团队, 适用于企业级中后台产品及云计算产品中. 一切图标都是免费的,可用于个人和商业用途</p>
+            </div> 
+            <Controller 
+                  activeNav={this.state.activeNav}
+                  nav={this.state.nav}
+                  fixed={this.state.fixed}
+                  typeshow={this.state.typeshow}
+                  onClick={(item)=>this.showSelect(item)}
+                  onChange={this.filterIcons}
+                ></Controller>
+              <main>
+          
+          {this.state.nav.map((item,index)=>{
             return <div key={index} className="IconContent" id={item.label.replace(' ','-').toLowerCase()}>
                     <h6 className="title is-6"> {item.title} ({item.label})</h6>
                     <div className="content">
@@ -104,11 +127,13 @@ class IndexPage extends Component{
                           <p>{item.label}</p>
                           </li>
                       })}
-                    </ul>: <></>}
+                    </ul>:<div className="ICons"> 暂未找到相关 Icons</div>}
                     
                     
                   </div>
           })}
+              </main>
+          
       </Layout>
   </>
     }

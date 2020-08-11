@@ -4,13 +4,13 @@ import '../Controller/style.scss'
 import Icon from "../Icon/index"
 
 const Controller = props => (
-    <div className="controller">
+    <div className={props.fixed?"controller fixed container":"controller"}>
             <div className="select-option" >
                 <div className="active" onClick={props.onClick}>{props.activeNav}<Icon name="chevron-down" size="20"></Icon></div>
                 {props.typeshow? <ul className="select-item">
-                  {props.nav.nodes.map((item,index)=>{
+                  {props.nav.map((item,index)=>{
                     return <li key={index} onClick={() => props.onClick(item)}>
-                              <Link to={"#"+item.label.replace(' ','-').toLowerCase()}>{item.title}</Link>
+                              <Link to={"#"+item.label.replace(' ','-').toLowerCase()} location>{item.title}</Link>
                             </li>
                   })}
                 </ul>: <></> }

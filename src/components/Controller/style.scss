@@ -72,5 +72,12 @@
             vertical-align: middle;
         }
     }
+    &.fixed.container {
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        padding-top: 12px!important;
+        top: 30px;
+    }
     
 }

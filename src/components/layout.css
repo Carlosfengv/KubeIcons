@@ -82,7 +82,7 @@ html,body{ -moz-user-select: -moz-none; -moz-user-select: none; -o-user-select:n
   margin-bottom: 12px!important;
 }
 .container{
-  padding-top: 120px!important;
+  padding-top: 60px!important;
 }
 .IconContent{
   margin: 32px 0;

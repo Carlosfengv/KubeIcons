@@ -24,16 +24,17 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="main">
-        <div className="container">
-          <main>{children}</main>
-          <footer>
+     <Header siteTitle={data.site.siteMetadata.title} />
+      <div className="container">
+        <div className="main">
+          {children}
+        </div>
+      <footer>
             © {new Date().getFullYear()}, Power By QingCloud Design Team.
             {` `}
-          </footer>
-        </div>
+      </footer>
       </div>
+     
       
     </>
   )
