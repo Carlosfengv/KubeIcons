@@ -70,6 +70,36 @@
         .input-symbol{
             display: inline-block;
             vertical-align: middle;
+            input{
+                width: 680px;
+                font-weight: bold;
+            }
+            ::-webkit-input-placeholder{
+                color:#abb4be;
+                font-weight: normal;
+            }
+        }
+    }
+    .ColorChange{
+        display: inline-block;
+        vertical-align: middle;
+        *{  
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .color{
+            *{
+                margin-right: 4px;
+            }
+            margin-right: 16px;
+            label{
+                font-weight: bold;
+                font-size: 12px;
+            }
+            span{
+                color: #abb4be;
+                width: 52px;
+            }
         }
     }
     &.fixed.container {
@@ -79,5 +109,7 @@
         padding-top: 12px!important;
         top: 30px;
     }
-    
+    .input-symbol input{
+        border: none;
+    }
 }

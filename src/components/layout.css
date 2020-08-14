@@ -100,7 +100,9 @@ html,body{ -moz-user-select: -moz-none; -moz-user-select: none; -o-user-select:n
   grid-template-columns: repeat(auto-fill,60px);
   grid-template-rows: repeat(auto-fill,96px);
 }
-
+.ICons .kubed-icon{
+  height: 60px!important;
+}
 .ICons li{
   text-align: center;
   vertical-align: middle;

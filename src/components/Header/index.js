@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Logo from "../../images/logo.svg"
 import '../Header/style.scss'
-import Icon from '../Icon/index'
+import Icon from '@kube-design/icons'
 
 const Header = ({}) => (
   <div className="container">

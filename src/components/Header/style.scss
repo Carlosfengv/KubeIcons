@@ -10,6 +10,9 @@
     .navbar{
         max-width: 1344px;;
         margin: 0 auto;
+        .kubed-icon {
+            height: 20px!important;
+        }
     }
     .navbar-item.getstart{
         background-color: #242e42;

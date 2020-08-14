@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Icon from "../components/Icon/index"
+import Icon from "@kube-design/icons/"
 import "bulma/bulma.sass"
 import DetailsModal from "../components/DetailsModal/index"
 import Controller from "../components/Controller/index"
@@ -33,10 +33,13 @@ class IndexPage extends Component{
         activeNav: "",
         typeshow: false,
         fixed: false,
-        test: {}
+        colored: {
+          primary: '#324558',
+          secondary: '#b6c2cd',
+        }
       }
   }
-  componentWillMount(){
+/*   componentWillMount(){
     const allnav = this.props.data.allNavYaml.nodes 
     const hash = window.location.hash.replace('#',"")
     const activeNav = allnav.filter( item => item.label.toLowerCase()===hash)
@@ -52,9 +55,24 @@ class IndexPage extends Component{
       })
     }
     
-  }
+  } */
   componentDidMount(){
     window.addEventListener('scroll', this.bindHandleScroll)
+    const allnav = this.props.data.allNavYaml.nodes 
+    const hash = window.location.hash.replace('#',"")
+    const activeNav = allnav.filter( item => item.label.toLowerCase()===hash)
+    if (activeNav.length===0) {
+      this.setState({
+        nav:allnav,
+        activeNav: '全部'
+      })
+    }else{
+      this.setState({
+        nav: allnav,
+        activeNav: activeNav[0].title
+      })
+    }
+  
   }
   bindHandleScroll=(event)=>{
     // 滚动的高度
@@ -103,10 +121,34 @@ class IndexPage extends Component{
       nav: content
     })
   }
+  ColorChange = (e) => {
+    console.log(e.target.name)
+    if(e.target.name === "dark"){
+      console.log("dark"+e.target.value)
+      this.setState({
+        colored: {
+          primary: e.target.value,
+          secondary: this.state.colored.secondary,
+        }
+      })
+    }else{
+      console.log("light"+e.target.value)
+      this.setState({
+        colored: {
+          primary: this.state.colored.primary,
+          secondary: e.target.value,
+        }
+      })
+    }
+  }
+  colorhandleChange = (item) =>{
+    console.log(item)
+  }
   render(){
       return <>
       {this.state.isShow? 
             <DetailsModal
+            color={this.state.colored}
             icon={this.state.icon}
             onClick={this.showIconsDetails}
             ></DetailsModal>: <></>}
@@ -122,6 +164,9 @@ class IndexPage extends Component{
                   typeshow={this.state.typeshow}
                   onClick={(item)=>this.showSelect(item)}
                   onChange={this.filterIcons}
+                  ColorChange={this.ColorChange}
+                  DefaultColor={this.state.colored}
+                  handleChange={(item)=>this.colorhandleChange(item)}
                 ></Controller>
               <main>
           
@@ -134,7 +179,7 @@ class IndexPage extends Component{
                     {item.items.length>0? <ul className="ICons">
                       {item.items.map((item,index)=>{
                         return <li key={index} onClick={()=> this.showIconsDetails(item)}>
-                          <Icon name={item.label.replace(' ','-').toLowerCase()} type="coloured" size="48" />
+                          <Icon name={item.label.replace(' ','-').toLowerCase()} color={this.state.colored} size="60" />
                           <p>{item.label}</p>
                           </li>
                       })}

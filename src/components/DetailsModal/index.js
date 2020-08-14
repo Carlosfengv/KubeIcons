@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icon/index';
+import Icon from '@kube-design/icons';
 import '../DetailsModal/style.scss'
 
 const DetailsModal = props => (
@@ -8,12 +8,13 @@ const DetailsModal = props => (
               <div className="modal-content">
               <div className="box">
                 <div className="iconbox">
-                    <Icon name={props.icon.label.replace(' ','-').toLowerCase()} type="coloured" />
+                    {console.log(props)}
+                    <Icon color={props.color} name={props.icon.label.replace(' ','-').toLowerCase()} type="coloured" />
                 </div>
                 <div className="details">
                     <h4 className="title is-4">{props.icon.label}</h4>
                     <article className="use">
-                    <h7 className="title is-7">在 KubeIcons 中使用(推荐)</h7>
+                    <h6 className="title is-7">在 KubeIcons 中使用(推荐)</h6>
                     <pre>{`<Icon name="`+ props.icon.label.replace(' ','-').toLowerCase()+`" size="medium" />`}</pre>
                     </article>
                 </div>

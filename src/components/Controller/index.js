@@ -1,7 +1,8 @@
 import { Link } from "gatsby"
 import React from "react"
 import '../Controller/style.scss'
-import Icon from "../Icon/index"
+import Icon from "@kube-design/icons"
+
 
 const Controller = props => (
     <div className={props.fixed?"controller fixed container":"controller"}>
@@ -18,7 +19,7 @@ const Controller = props => (
             <span className="hr"></span>
             <div className="searchbox">
                 <div className="search-input">
-                  <Icon name="magnifier" size="20" type="coloured"></Icon>
+                  <Icon color="dark" name="magnifier" size="20" type="coloured"></Icon>
                   <div className="input-symbol">
                     <input placeholder="搜索Icons" 
                       onChange={props.onChange}
@@ -26,6 +27,25 @@ const Controller = props => (
                   </div>
                 </div>
             </div>
+            <span className="hr"></span>
+            <div className="ColorChange">
+                  <div className="input-symbol">
+                    <div className="color">
+                      <label>Primary</label>
+                      <input type="color" defaultValue={props.DefaultColor.primary} placeholder="dark"  name="dark" onChange={props.ColorChange}
+                      ></input>
+                      <span>{props.DefaultColor.primary}</span>
+                    </div>
+                    <div className="color">
+                      <label >Secondary</label>
+                      <input type="color" defaultValue={props.DefaultColor.secondary} placeholder="light" name="light" onChange={props.ColorChange}
+                      ></input>
+                      <span>{props.DefaultColor.secondary}</span>
+                    </div>
+
+                    
+                  </div>
+                </div>
           </div>
 )
 export default Controller
